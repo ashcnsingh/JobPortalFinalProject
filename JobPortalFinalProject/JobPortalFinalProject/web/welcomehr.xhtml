@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Welcome HR</title>
+        <meta http-equiv="pragma" content="no-cache" />
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        <h:form class="login-card" >
+            <h1>Hello Admin !!</h1>
+            <p>What do you like to do today? </p>
+           
+            <p>
+                <h:column>  
+                   <h:commandButton id = "Createjob" value="Create job" action="createjob.xhtml" />
+                </h:column>
+            </p>
+              
+               
+               <p>
+                <h:column>  
+                   <h:commandButton id = "viewjob" value="View job" action="#{login.viewjobdisplay()}" />
+                </h:column>
+            </p>
+            
+            <p>
+                <h:column>  
+                    
+                   <h:commandButton id = "sendresults" value="Send Final Results" action="#{viewhr.sendresults()}" />
+                </h:column>
+            </p>
+            
+            <p>
+                <h:column>
+                <h:commandButton id="ResetPassword" value="Reset Password"  
+                                 action="resetPassword.xhtml" /> 
+                </h:column>
+            </p>
+            
+            
+            <p>
+                <h:column>
+                <h:commandButton id="Logout" value="Logout"  
+                                 action="index.xhtml" /> 
+                </h:column>
+            </p>
+           
+        </h:form>
+    </body>
+</html>

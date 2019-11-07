@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>View User</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/newcss.css"/>
+    </head>
+    <body>
+        <h:form class="index-card">
+           <p>Total number of jobs are #{login.list1.size()}</p>
+           <h:dataTable id="id" rows="#{login.list1.size()}" value="#{login.list1}" var="obj">
+
+               <h:column>
+                   <h:outputText styleClass="dataTableOutputText" 
+                                 id="jobTitle" value="#{obj.jobtitle}"/>
+               </h:column> 
+               
+               <h:column>
+                   <h:outputText styleClass="dataTableOutputText" 
+                                 id="jobDesc" value="#{obj.jobdesc}"/>
+               </h:column>  
+               
+               <h:column>  
+                    <h:commandLink value="select" action="#{login.goFormuser(obj.jobid)}" />
+                </h:column>
+               
+           </h:dataTable>
+           
+           <br></br>
+           <p>
+                <h:commandButton id="Return" value="return"
+                                 action="welcome.xhtml" />
+            </p>
+        </h:form>           
+    </body>
+</html>

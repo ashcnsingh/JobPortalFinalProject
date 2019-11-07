@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>view job</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+         <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+       <h:form class="login-card" >
+           <p>Total number of jobs are #{login.list1.size()}</p>
+           <h:dataTable id="id" rows="#{login.list1.size()}" value="#{login.list1}" var="obj">
+               
+               <h:column>
+                   <h:outputText styleClass="dataTableOutputText" 
+                                 id="jobID" value="#{obj.jobid}"/>
+               </h:column>  
+               <h:column>
+                   <h:outputText styleClass="dataTableOutputText" 
+                                 id="jobTitle" value="#{obj.jobtitle}"/>
+               </h:column>  
+               <!--<h:column>
+                   <h:outputText styleClass="dataTableOutputText" 
+                                 id="jobDesc" value="#{obj.jobdesc}"/>
+               </h:column>  --> 
+               <h:column>
+                   <h:outputText styleClass="dataTableOutputText" 
+                                 id="jobPos" value="#{obj.jobpos}"/>
+               </h:column>  
+               
+               <h:column>  
+                   <h:commandLink value="View applicants" action="#{viewhr.goForm(obj.jobid)}"/>
+                                  
+                </h:column>
+               
+               
+               <!--<h:column>
+                   <h:link value="View" outcome="showParam">
+                       <f:param name="selected" value="#{login.goForm(obj.jobid)}" />
+                       
+                   </h:link>
+               </h:column>-->
+               
+           </h:dataTable>
+            
+           <br></br>
+           <br></br>    
+              <h:commandButton id="return" value="Return"
+                                 action="welcomehr.xhtml" />
+               
+ 
+        </h:form>
+            
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Job Details</title>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="refresh"/>
+<link rel="stylesheet" href="css/style.css"/> 
+    </h:head>
+    <h:body>
+       
+       <h:form class="login-card" >
+            <h3>Please Enter Job Details</h3>
+            
+            
+                 
+            <p>Job ID:<br></br>
+                <h:inputText id="jobid1" required ="true" 
+                             requiredMessage="The ID field cannot be empty"
+                        title="Please enter Job ID"
+                        value="#{createJob.jobid1}"
+                 
+                />
+            </p>
+            
+            <p>Job Title:<br></br>
+                <h:inputText id="jobtitle1" required ="true" 
+                          requiredMessage="The subject field cannot be empty"
+                        title="Please enter your subject"
+                        value="#{createJob.jobtitle1}"/>
+                     
+            </p>
+            
+            <p>Job Description:<br></br>
+                <h:inputText id="jobdesc1" required ="true" 
+                          requiredMessage="The message field cannot be empty"
+                        title="Please enter your message"
+                        value="#{createJob.jobdesc1}"/>
+                     
+            </p>
+            
+            <p>No.Of Positions available:<br></br>
+                <h:inputText id="jobpos1" required ="true" 
+                          requiredMessage="The message field cannot be empty"
+                        title="Please enter your message"
+                        value="#{createJob.jobpos1}"/>
+                     
+            </p>
+            
+             <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{createJob.createjob()}" />
+            </p>
+            <p>
+                <h:commandButton id="return" value="Return"
+                                 action="welcomehr.xhtml" />
+        </p>
+
+        </h:form>
+        
+    </h:body>
+</html>
+

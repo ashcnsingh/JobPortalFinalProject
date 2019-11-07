@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Login OK</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/index.css"/>
+    </head>
+    <body>
+         <h:form class="index-card">
+             <h1>Welcome #{login.lname}</h1>
+           
+            <p>
+                <h:column>  
+                   <h:commandButton id = "viewjob" value="Apply for a Job" action="#{login.viewjobdisplayuser()}" />
+                </h:column>
+            </p>
+            <p>
+                <h:column>  
+                   <h:commandButton id = "viewappjob" value="View Applied jobs" action="#{login.viewappjobs()}" />
+                </h:column>
+            </p>
+            <p>
+                <h:column>
+                <h:commandButton id="ResetPassword" value="Reset Password"  
+                                 action="resetPassword.xhtml" /> 
+                </h:column>
+            </p>
+            <p>
+                <h:column>
+                <h:commandButton id="Logout" value="Logout"  
+                                 action="index.xhtml" /> 
+                </h:column>
+            </p>
+        </h:form>
+    </body>
+</html>

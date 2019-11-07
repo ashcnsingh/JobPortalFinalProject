@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Apply user</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/index.css"/>
+    </head>
+    <body>
+      <h:form class="index-card">
+
+           <h2> The job details are as follows: </h2>
+           <div><p>Job ID: #{login.jobID}</p></div>
+           <div><p>Job Title: #{login.jobTitle}</p></div>
+           
+        <div><p>Job Description: #{login.jobDesc}</p></div>
+        
+        
+        <div><p>#{userDetails.goUser(login.jobID, login.id )}</p></div>
+        
+        <p><h2> Fill in your information. </h2></p>
+       
+        <p>Full Name:<br></br>
+                <h:inputText id="name" required ="true" 
+                             requiredMessage="The Full Name field cannot be empty"
+                        title="Please enter your Full Name"
+                        value="#{userDetails.fname}">
+                </h:inputText>
+            </p>
+        
+        <p>Qualification:<br></br>
+                <h:inputText id="quali" required ="true" 
+                             requiredMessage="The Qualificatiion field cannot be empty"
+                        title="Please enter your Qualification"
+                        value="#{userDetails.qualification}">
+                </h:inputText>
+            </p>
+        
+        <p>Years of Experience:<br></br>
+                <h:inputText id="yexp" required ="true" 
+                             requiredMessage="The Years of Experience field cannot be empty"
+                             title="Please enter your Year of Experience"
+                        value="#{userDetails.yExp}">
+                </h:inputText>
+            </p>
+        
+        <p>Field of Experience:<br></br>
+                <h:inputText id="fexp" required ="true" 
+                             requiredMessage="The Field of Experience field cannot be empty"
+                        title="Please enter your Field of Experience"
+                        value="#{userDetails.fExp}">
+                </h:inputText>
+            </p>
+        
+        <p>Contact Number:<br></br>
+                <h:inputText id="numb" required ="true" 
+                             requiredMessage="The Contact Number field cannot be empty"
+                        title="Please enter your Contact Number"
+                        value="#{userDetails.contact}">
+                </h:inputText>
+            </p>
+        
+        <p>
+            <h:commandButton value="Submit" action="#{userDetails.submit(login.id,login.jobID)}" />
+        </p>
+        <p>
+            <h:commandButton value="return" action="viewjobuser" />
+        </p>
+       
+        </h:form>
+    </body>
+</html>

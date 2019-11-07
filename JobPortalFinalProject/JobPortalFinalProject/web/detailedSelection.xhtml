@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Detailed Selection</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <link rel="stylesheet" href="css/style.css"/> 
+
+    </head>
+     <h:form class="login-card" >
+    <h:body>
+        <div>#{viewhr.go(param.select1)} </div>
+       <!-- <div><p>Hello, your Detailed Selection #{viewhr.applid}</p></div> -->
+          
+        
+        
+           Application Number:#{param.select1} <br></br>
+           <!--Name:               #{param.select2} <br></br>-->
+           Job Applied for     :#{param.select3} <br></br>
+           Name                :#{param.select4} <br></br>
+           Qualifications      :#{param.select5} <br></br>
+           Years of experience :#{param.select6} <br></br>
+           Field of experience :#{param.select7} <br></br>
+           Contact Number      :#{param.select8} <br></br>
+           Status              :#{param.select9} <br></br>
+           
+       
+            <h:column>
+                 <p>
+                     <div><p>#{viewhr.dropdown()}</p></div>
+                    
+                     <p>Decision:  
+                     <h:selectOneMenu id="from" required="true"  style="width:150px" 
+                                  value="#{viewhr.decision}">  
+
+                     <f:selectItems value="#{viewhr.dd}" /> 
+                     
+                     
+                </h:selectOneMenu>
+                     
+               
+                <br></br><br></br>
+                 </p>
+                     </p> 
+</h:column>
+        
+             <h:commandButton id="transfer" value="Confirm"  
+                              action="#{viewhr.confirm()}"  />
+             <br></br>
+             <h:commandButton id="return" value="Return"
+                                 action="viewjob.xhtml" />
+    </h:body>
+    </h:form>
+</html>
